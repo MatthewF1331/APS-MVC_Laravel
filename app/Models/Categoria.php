@@ -7,4 +7,12 @@ class Categoria extends Model
 {
     use HasFactory;
     protected $fillable = ['nome'];
+
+    /**
+     * Relação N:M com Produto
+     */
+    public function produtos()
+    {
+        return $this->belongsToMany(Produto::class);
+    }
 }
